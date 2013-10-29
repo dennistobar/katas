@@ -12,11 +12,16 @@ function simple($n){
     return array('pares' => (int)ceil($n/2)+(int)($n%2==0), 'impares' => (int)ceil($n/2));
 }
 
-function imprimir($n){
+function imprimirFilter($n){
     print implode("-", array_filter(range(0, abs($n)), function($f){ return $f % 2; }));
 }
 
+function imprimirRange($n){
+    print implode("-", range(1, abs($n), 2));
+}
+
 $n = 30;
-echo imprimir($n).PHP_EOL;
+echo imprimirFilter($n).PHP_EOL;
 echo 'Conté '.simple($n)['pares'].' pares'.PHP_EOL;
 echo 'Conté '.simple($n)['impares'].' impares'.PHP_EOL;
+echo imprimirRange($n).PHP_EOL;
