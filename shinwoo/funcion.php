@@ -13,7 +13,7 @@ function simple($n){
 }
 
 function imprimir($n){
-    print implode("-", range(0, abs($n)));
+    print implode("-", array_filter(range(0, abs($n)), function($f){ return $f % 2; }));
 }
 
 $n = 30;
